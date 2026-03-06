@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching & Carreiras | Consultoria Estratégica e Gestão de Carreiras</title>
+    <meta name="description" content="Consultoria especializada em gestão de carreiras, coaching executivo e desenvolvimento organizacional. Transformamos pessoas e organizações.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html {
+            font-size: 90%;
+            scroll-behavior: smooth;
+        }
+        body {
+            overflow-x: hidden;
+        }
+        /* Animações de Scroll via Intersection Observer */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+    </style>
+</head>
+<body class="font-sans text-slate-700 bg-slate-50 antialiased">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300" id="header">
+        <div class="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="#inicio" class="flex items-center group">
+                    <img src="img/logo.png" alt="Coaching & Carreiras Logo" class="h-10 lg:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+                </a>
+
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#inicio" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Início</a>
+                    <a href="#sobre" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Sobre Nós</a>
+                    <a href="#profissionais" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Para Profissionais</a>
+                    <a href="#empresas" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Para Empresas</a>
+                    <a href="#depoimentos" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Depoimentos</a>
+                    <a href="#artigos" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Artigos</a>
+                </nav>
+
+                <div class="hidden lg:block">
+                    <a href="#contato" class="inline-flex items-center gap-2 bg-navy-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-navy-800 transition-all duration-300 hover:shadow-lg hover:shadow-navy-900/20">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        Fale Conosco
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-600 hover:text-navy-900">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100">
+            <nav class="flex flex-col px-4 py-4 gap-3">
+                <a href="#inicio" class="text-sm font-medium text-slate-600 hover:text-navy-900 py-2">Início</a>
+                <a href="#sobre" class="text-sm font-medium text-slate-600 hover:text-navy-900 py-2">Sobre Nós</a>
+                <a href="#profissionais" class="text-sm font-medium text-slate-600 hover:text-navy-900 py-2">Para Profissionais</a>
+                <a href="#empresas" class="text-sm font-medium text-slate-600 hover:text-navy-900 py-2">Para Empresas</a>
+                <a href="#depoimentos" class="text-sm font-medium text-slate-600 hover:text-navy-900 py-2">Depoimentos</a>
+                <a href="#artigos" class="text-sm font-medium text-slate-600 hover:text-navy-900 py-2">Artigos</a>
+                <a href="#contato" class="inline-flex items-center justify-center gap-2 bg-navy-900 text-white px-5 py-3 rounded-lg text-sm font-medium mt-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    Fale Conosco
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920" 
+                 alt="Executivos corporativos" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-900/85 to-navy-800/70"></div>
+        </div>
+
+        <div class="relative z-10 w-full px-4 sm:px-6 lg:px-12 xl:px-20 pt-20">
+            <div class="max-w-4xl reveal">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+                    <i data-lucide="award" class="w-4 h-4 text-gold-400"></i>
+                    <span class="text-sm text-white/90 font-medium">15+ Anos de Excelência no Mercado</span>
+                </div>
+
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6">
+                    Disseminando<br>
+                    <span class="text-gold-400">Conhecimento</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl mb-10">
+                    Desenvolvemos pessoas e organizações para o mais alto nível do mercado de trabalho e empregabilidade, influenciando a condição social e econômica.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#profissionais" class="inline-flex items-center justify-center gap-2 bg-gold-500 text-navy-950 px-8 py-4 rounded-lg text-base font-semibold hover:bg-gold-400 transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/30">
+                        <i data-lucide="user" class="w-5 h-5"></i>
+                        Sou Profissional
+                    </a>
+                    <a href="#empresas" class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg text-base font-semibold hover:bg-white/20 transition-all duration-300">
+                        <i data-lucide="building-2" class="w-5 h-5"></i>
+                        Sou Empresa
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+            <a href="#sobre" class="flex flex-col items-center gap-2 text-white/60 hover:text-white transition-colors">
+                <span class="text-xs font-medium tracking-wider">CONHEÇA MAIS</span>
+                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-20 lg:py-28 bg-white">
+        <div class="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="inline-block text-gold-600 text-sm font-semibold tracking-wider uppercase mb-3">Quem Somos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 mb-6">
+                    Nossa Essência
+                </h2>
+                <p class="text-slate-600 text-lg">
+                    Uma consultoria comprometida com resultados reais e transformação profissional
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="reveal group relative bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-slate-100">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold-400 to-gold-600 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-14 h-14 bg-navy-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="target" class="w-7 h-7 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-navy-900 mb-4">Missão</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Disseminar conhecimentos sobre o mundo do trabalho e empregabilidade, para desenvolver pessoas e organizações, influenciando na melhoria da condição social, política e econômica do país.
+                    </p>
+                </div>
+
+                <div class="reveal delay-100 group relative bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-slate-100">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold-400 to-gold-600 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-14 h-14 bg-navy-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="eye" class="w-7 h-7 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-navy-900 mb-4">Visão</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Ser a melhor consultoria de gestão de carreiras e coaching e, fonte de referência em gestão de pessoas, motivando e promovendo ações que estimulem profissionais no desenvolvimento de suas carreiras.
+                    </p>
+                </div>
+
+                <div class="reveal delay-200 group relative bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-slate-100">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold-400 to-gold-600 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-14 h-14 bg-navy-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="gem" class="w-7 h-7 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-navy-900 mb-4">Nossos Valores</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Foco no "foco" do nosso cliente</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Competência e ética no desenvolvimento</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Atendimento personalizado</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Agilidade, inovação e profissionalismo</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Excelência e crescimento sustentado</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profissionais" class="py-20 lg:py-28 bg-slate-50 border-t border-slate-200">
+        <div class="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="inline-block text-gold-600 text-sm font-semibold tracking-wider uppercase mb-3">Para Você</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 mb-6">
+                    Serviços para Profissionais
+                </h2>
+                <p class="text-slate-600 text-lg">
+                    Soluções personalizadas para impulsionar sua carreira e alcançar seus objetivos.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="reveal group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-slate-100 flex flex-col h-full">
+                    <div class="w-14 h-14 bg-gradient-to-br from-navy-900 to-navy-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="route" class="w-7 h-7 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Gestão e Planejamento de Carreiras</h3>
+                    <p class="text-slate-500 text-sm mb-6 flex-grow">
+                        Metodologia em etapas (da Autoanálise ao Planejamento Futuro) para o desenvolvimento e controle da sua trajetória.
+                    </p>
+                    <button onclick="openModal('modal-b2c-1')" class="inline-flex items-center gap-2 text-navy-900 font-medium text-sm hover:text-gold-600 transition-colors mt-auto">
+                        Ver etapas e metodologia
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div class="reveal delay-100 group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-slate-100 flex flex-col h-full">
+                    <div class="w-14 h-14 bg-gradient-to-br from-navy-900 to-navy-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shuffle" class="w-7 h-7 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Transição de Carreiras & Avaliação</h3>
+                    <p class="text-slate-500 text-sm mb-6 flex-grow">
+                        Mecanismo de Avaliação Contínua e prospecção em novos mercados com headhunters focados no seu perfil.
+                    </p>
+                    <button onclick="openModal('modal-b2c-2')" class="inline-flex items-center gap-2 text-navy-900 font-medium text-sm hover:text-gold-600 transition-colors mt-auto">
+                        Ver descrição completa
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div class="reveal delay-200 group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-slate-100 flex flex-col h-full">
+                    <div class="w-14 h-14 bg-gradient-to-br from-navy-900 to-navy-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="users" class="w-7 h-7 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Coaching Executivo e Life Coaching</h3>
+                    <p class="text-slate-500 text-sm mb-6 flex-grow">
+                        Encontros para desenvolver a capacidade de administrar mudanças, lidar com stress e aumentar a liderança.
+                    </p>
+                    <button onclick="openModal('modal-b2c-3')" class="inline-flex items-center gap-2 text-navy-900 font-medium text-sm hover:text-gold-600 transition-colors mt-auto">
+                        Ver formato dos encontros
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div class="reveal group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-slate-100 flex flex-col h-full">
+                    <div class="w-14 h-14 bg-gradient-to-br from-navy-900 to-navy-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="compass" class="w-7 h-7 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Orientação Pré e Pós Carreiras</h3>
+                    <p class="text-slate-500 text-sm mb-6 flex-grow">
+                        Programa em 4 fases (Diagnóstico, Plano, Acompanhamento, Prospecção) para Trainees e profissionais Seniores.
+                    </p>
+                    <button onclick="openModal('modal-b2c-4')" class="inline-flex items-center gap-2 text-navy-900 font-medium text-sm hover:text-gold-600 transition-colors mt-auto">
+                        Ver etapas do programa
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div class="reveal delay-100 group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-slate-100 flex flex-col h-full">
+                    <div class="w-14 h-14 bg-gradient-to-br from-navy-900 to-navy-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="languages" class="w-7 h-7 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">English Interview</h3>
+                    <p class="text-slate-500 text-sm mb-6 flex-grow">
+                        Preparação tática, avaliação idiomática e simulações para entrevistas de emprego conduzidas em inglês.
+                    </p>
+                    <button onclick="openModal('modal-b2c-5')" class="inline-flex items-center gap-2 text-navy-900 font-medium text-sm hover:text-gold-600 transition-colors mt-auto">
+                        Ler descrição completa
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div class="reveal delay-200 group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-slate-100 flex flex-col h-full">
+                    <div class="w-14 h-14 bg-gradient-to-br from-navy-900 to-navy-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="user-check" class="w-7 h-7 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Serviços Individuais</h3>
+                    <p class="text-slate-500 text-sm mb-6 flex-grow">
+                        Consultorias pontuais como elaboração curricular, LinkedIn, avaliação idiomática e palestras.
+                    </p>
+                    <button onclick="openModal('modal-b2c-6')" class="inline-flex items-center gap-2 text-navy-900 font-medium text-sm hover:text-gold-600 transition-colors mt-auto">
+                        Ver portfólio avulso
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="empresas" class="py-20 lg:py-28 bg-navy-900">
+        <div class="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="inline-block text-gold-400 text-sm font-semibold tracking-wider uppercase mb-3">Para Sua Empresa</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+                    Soluções Corporativas
+                </h2>
+                <p class="text-slate-300 text-lg">
+                    Serviços especializados para desenvolver talentos, lideranças e potencializar resultados organizacionais.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="reveal group bg-navy-800/50 backdrop-blur-sm rounded-2xl p-8 border border-navy-700 hover:border-gold-500/50 hover:bg-navy-800 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full">
+                    <div class="w-14 h-14 bg-gradient-to-br from-gold-500 to-gold-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="building" class="w-7 h-7 text-navy-900"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Coaching Corporativo & Organizacional</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">
+                        Processo alicerçado na Missão e Valores da empresa, focando na liderança e gestão de mudanças (fusões/aquisições).
+                    </p>
+                    <button onclick="openModal('modal-b2b-1')" class="inline-flex items-center gap-2 text-gold-400 font-medium text-sm hover:text-gold-300 transition-colors mt-auto">
+                        Ver pilares do processo
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div class="reveal delay-100 group bg-navy-800/50 backdrop-blur-sm rounded-2xl p-8 border border-navy-700 hover:border-gold-500/50 hover:bg-navy-800 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full">
+                    <div class="w-14 h-14 bg-gradient-to-br from-gold-500 to-gold-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="door-open" class="w-7 h-7 text-navy-900"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Outplacement Corporativo</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">
+                        Gestão humanizada e ética em desligamentos, estruturando uma campanha de transição agressiva para o executivo.
+                    </p>
+                    <button onclick="openModal('modal-b2b-2')" class="inline-flex items-center gap-2 text-gold-400 font-medium text-sm hover:text-gold-300 transition-colors mt-auto">
+                        Ler metodologia
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div class="reveal delay-200 group bg-navy-800/50 backdrop-blur-sm rounded-2xl p-8 border border-navy-700 hover:border-gold-500/50 hover:bg-navy-800 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full">
+                    <div class="w-14 h-14 bg-gradient-to-br from-gold-500 to-gold-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="search" class="w-7 h-7 text-navy-900"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Recrutamento & Seleção (Hunting)</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">
+                        Contratação de talentos com sigilo, rapidez e precisão de perfil através do recrutamento por competências.
+                    </p>
+                    <button onclick="openModal('modal-b2b-3')" class="inline-flex items-center gap-2 text-gold-400 font-medium text-sm hover:text-gold-300 transition-colors mt-auto">
+                        Ver vantagens do Hunting
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div class="reveal group bg-navy-800/50 backdrop-blur-sm rounded-2xl p-8 border border-navy-700 hover:border-gold-500/50 hover:bg-navy-800 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full">
+                    <div class="w-14 h-14 bg-gradient-to-br from-gold-500 to-gold-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="map" class="w-7 h-7 text-navy-900"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Assessment (Mapa de Talentos)</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">
+                        Identificação científica de potenciais internos com base nas competências essenciais do negócio.
+                    </p>
+                    <button onclick="openModal('modal-b2b-4')" class="inline-flex items-center gap-2 text-gold-400 font-medium text-sm hover:text-gold-300 transition-colors mt-auto">
+                        Ver etapas de aplicação
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div class="reveal delay-100 group bg-navy-800/50 backdrop-blur-sm rounded-2xl p-8 border border-navy-700 hover:border-gold-500/50 hover:bg-navy-800 transition-all duration-500 hover:-translate-y-1 sm:col-span-2 lg:col-span-1 flex flex-col h-full">
+                    <div class="w-14 h-14 bg-gradient-to-br from-gold-500 to-gold-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="presentation" class="w-7 h-7 text-navy-900"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Treinamentos in Company</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">
+                        Cursos presenciais ou e-learning 100% customizados, focados no desenvolvimento interno in loco da sua equipe.
+                    </p>
+                    <button onclick="openModal('modal-b2b-5')" class="inline-flex items-center gap-2 text-gold-400 font-medium text-sm hover:text-gold-300 transition-colors mt-auto">
+                        Ler formatos disponíveis
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 lg:py-20 bg-gradient-to-br from-gold-500 to-gold-600">
+        <div class="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 reveal">
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-navy-900 mb-2">+500</div>
+                    <div class="text-navy-800 font-medium uppercase tracking-wider text-sm">Profissionais Atendidos</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-navy-900 mb-2">15+</div>
+                    <div class="text-navy-800 font-medium uppercase tracking-wider text-sm">Anos de Mercado</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-navy-900 mb-2">100%</div>
+                    <div class="text-navy-800 font-medium uppercase tracking-wider text-sm">Índice de Satisfação</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-navy-900 mb-2">Top</div>
+                    <div class="text-navy-800 font-medium uppercase tracking-wider text-sm">Executivos do Brasil</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-white border-y border-slate-200 overflow-hidden">
+        <div class="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-80 reveal">
+                <a href="https://european-coaching-association.de/" target="_blank" class="hover:opacity-100 hover:scale-105 transition-all duration-300">
+                    <img src="img/eca.jpg" alt="European Coaching Association" class="h-16 md:h-20 lg:h-24 object-contain mix-blend-multiply">
+                </a>
+                <a href="http://www.abrhnacional.org.br/" target="_blank" class="hover:opacity-100 hover:scale-105 transition-all duration-300">
+                    <img src="img/abn.jpg" alt="ABRH Nacional" class="h-16 md:h-20 lg:h-24 object-contain mix-blend-multiply">
+                </a>
+                <a href="https://www.behavioral-coaching-institute.com/" target="_blank" class="hover:opacity-100 hover:scale-105 transition-all duration-300">
+                    <img src="img/behavioral.jpg" alt="Behavioral Coaching Institute" class="h-16 md:h-20 lg:h-24 object-contain mix-blend-multiply">
+                </a>
+                <a href="https://abemd.org.br/" target="_blank" class="hover:opacity-100 hover:scale-105 transition-all duration-300">
+                    <img src="img/abemd.jpg" alt="ABEMD" class="h-16 md:h-20 lg:h-24 object-contain mix-blend-multiply">
+                </a>
+                <a href="https://www.theglobalcoachingcommunity.com/lander" target="_blank" class="hover:opacity-100 hover:scale-105 transition-all duration-300">
+                    <img src="img/global.jpg" alt="Global Coaching Community" class="h-16 md:h-20 lg:h-24 object-contain mix-blend-multiply">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-20 lg:py-28 bg-slate-50">
+        <div class="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="inline-block text-gold-600 text-sm font-semibold tracking-wider uppercase mb-3">Prova Social</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 mb-6">
+                    A Palavra de Quem Viveu a Transformação
+                </h2>
+                <p class="text-slate-600 text-lg">
+                    Temos orgulho de atender líderes e executivos das maiores empresas e multinacionais do Brasil e do mundo.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto mb-20 rounded-2xl overflow-hidden shadow-2xl reveal relative bg-navy-900 aspect-video ring-1 ring-slate-200">
+                <iframe class="absolute inset-0 w-full h-full" 
+                        src="https://www.youtube.com/embed/ScMzIvxBSi4?rel=0" 
+                        title="Depoimento Rafael Querido - Coaching & Carreiras" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="reveal bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-1 mb-6">
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                    </div>
+                    <p class="text-slate-700 leading-relaxed mb-8 italic text-lg">
+                        "Equipe altamente qualificada e atenciosa. O atendimento foi essencial para que eu compreendesse melhor meu momento profissional. Todos com quem tive contato demonstraram grande disponibilidade para ajudar."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-slate-100 pt-6">
+                        <div class="w-12 h-12 bg-navy-900 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-gold-400 font-bold">JM</span>
+                        </div>
+                        <div>
+                            <div class="font-bold text-navy-900 text-lg">J.M.</div>
+                            <div class="text-sm font-medium text-gold-600">Superintendente, Banco Safra</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal delay-100 bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-1 mb-6">
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                    </div>
+                    <p class="text-slate-700 leading-relaxed mb-8 italic text-lg">
+                        "Todas as ferramentas aplicadas foram valiosas para ampliar minha visão sobre onde estou, para onde quero ir e como realizar essa transição. A aplicabilidade dos conceitos aprendidos é imediata."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-slate-100 pt-6">
+                        <div class="w-12 h-12 bg-navy-900 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-gold-400 font-bold">TS</span>
+                        </div>
+                        <div>
+                            <div class="font-bold text-navy-900 text-lg">T.S.B.C</div>
+                            <div class="text-sm font-medium text-gold-600">Gerente Planejamento, Baxter Hospitalar</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-1 mb-6">
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                    </div>
+                    <p class="text-slate-700 leading-relaxed mb-8 italic text-lg">
+                        "Gostaria de agradecer o profissionalismo e o cuidado. Ao longo do processo, passei a me enxergar como uma pessoa capaz, reconhecendo meu desempenho e entendendo meu papel como protagonista da minha trajetória."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-slate-100 pt-6">
+                        <div class="w-12 h-12 bg-navy-900 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-gold-400 font-bold">PV</span>
+                        </div>
+                        <div>
+                            <div class="font-bold text-navy-900 text-lg">P.V.</div>
+                            <div class="text-sm font-medium text-gold-600">Coordenadora, ADM do Brasil</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal delay-100 bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-1 mb-6">
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-gold-500 fill-gold-500"></i>
+                    </div>
+                    <p class="text-slate-700 leading-relaxed mb-8 italic text-lg">
+                        "Ao fim, consegui visualizar com nitidez minhas fortalezas e vulnerabilidades. Com isso, sinto-me mais confiante. Desenhar o caminho que desejo se tornou mais 'fácil' e claro. Sinto-me mais completo."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-slate-100 pt-6">
+                        <div class="w-12 h-12 bg-navy-900 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-gold-400 font-bold">VY</span>
+                        </div>
+                        <div>
+                            <div class="font-bold text-navy-900 text-lg">V.Y.C.S</div>
+                            <div class="text-sm font-medium text-gold-600">Advogado, Alibaba Group</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="artigos" class="py-20 lg:py-28 bg-navy-950 text-white border-t border-white/5">
+        <div class="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 uppercase tracking-wider">
+                    ÚLTIMOS ARTIGOS
+                </h2>
+                <div class="w-16 h-1 bg-gold-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto border-y border-white/10 py-10 mb-10">
+                <div class="reveal group cursor-pointer">
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-gold-400 transition-colors leading-snug">A influência dos pares pode determinar o sucesso ou o fracasso da sua implementação de IA</h3>
+                    <p class="text-slate-400 text-sm mb-4">3 de março de 2026 • Notícias e artigos</p>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4 line-clamp-3">
+                        Os líderes enfrentam um paradoxo na adoção da IA. Eles fizeram o que parecia certo — implementaram as ferramentas adequadas, investiram em treinamento e integraram a IA aos fluxos de...
+                    </p>
+                    <a href="https://coachingcarreiras.com.br/noticias/" target="_blank" class="text-gold-500 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Ler Mais <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+
+                <div class="reveal delay-100 group cursor-pointer">
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-gold-400 transition-colors leading-snug">Quando o líder ousado que você contratou começa a se conformar.</h3>
+                    <p class="text-slate-400 text-sm mb-4">24 de fevereiro de 2026 • Notícias e artigos</p>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4 line-clamp-3">
+                        Você fez uma aposta estratégica e contratou um líder ousado para revolucionar o mercado. Mas, como CEO ou membro da alta administração, você percebeu que o sistema que ele deveria...
+                    </p>
+                    <a href="https://coachingcarreiras.com.br/noticias/" target="_blank" class="text-gold-500 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Ler Mais <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+
+                <div class="reveal delay-200 group cursor-pointer">
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-gold-400 transition-colors leading-snug">Como os líderes podem praticar a empatia sábia</h3>
+                    <p class="text-slate-400 text-sm mb-4">17 de fevereiro de 2026 • Notícias e artigos</p>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4 line-clamp-3">
+                        A empatia tornou-se uma expectativa básica da liderança moderna, mas, praticada sem discernimento, pode ser contraproducente, deixando os líderes esgotados e os funcionários com a sensação de incompreensão. Nas últimas...
+                    </p>
+                    <a href="https://coachingcarreiras.com.br/noticias/" target="_blank" class="text-gold-500 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Ler Mais <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+
+            <div class="text-center reveal">
+                <a href="https://coachingcarreiras.com.br/noticias/" target="_blank" class="inline-flex items-center gap-2 border border-white/30 text-white px-8 py-3 rounded hover:bg-white hover:text-navy-950 transition-all font-semibold tracking-wider uppercase text-sm">
+                    <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                    Ver Todas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-20 lg:py-28 bg-white">
+        <div class="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
+            <div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.05)] border border-slate-100 overflow-hidden flex flex-col lg:flex-row reveal">
+                <div class="lg:w-2/5 bg-navy-900 p-10 lg:p-12 text-white flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg')] bg-cover mix-blend-overlay"></div>
+                    <div class="relative z-10">
+                        <h3 class="font-serif text-3xl font-bold mb-4">Dê o Próximo Passo.</h3>
+                        <p class="text-slate-300 mb-8 leading-relaxed">Preencha o formulário para agendarmos uma conversa sobre as soluções ideais para sua carreira ou sua empresa.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="phone" class="w-5 h-5 text-gold-400"></i>
+                                </div>
+                                <span class="font-medium">(11) 2308-9233</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="message-circle" class="w-5 h-5 text-gold-400"></i>
+                                </div>
+                                <span class="font-medium">(11) 94732-0053 (WhatsApp)</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="mail" class="w-5 h-5 text-gold-400"></i>
+                                </div>
+                                <span class="font-medium">atendimento@coachingcarreiras.com.br</span>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-gold-400"></i>
+                                </div>
+                                <span class="font-medium leading-relaxed">Avenida Ibirapuera, 2064<br>Moema – São Paulo/SP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-3/5 p-10 lg:p-12">
+                    <h3 class="text-2xl font-bold text-navy-900 mb-6">Envie sua mensagem</h3>
+                    <form class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Nome Completo</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all bg-slate-50" placeholder="Seu nome">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Telefone / WhatsApp</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all bg-slate-50" placeholder="(00) 00000-0000">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">E-mail Corporativo ou Pessoal</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all bg-slate-50" placeholder="email@exemplo.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Assunto</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all bg-slate-50" placeholder="Como podemos ajudar?">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Mensagem</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all resize-none bg-slate-50" placeholder="Detalhe sua necessidade..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold py-4 rounded-lg transition-colors shadow-md">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-navy-950 py-16">
+        <div class="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <img src="img/logo.png" alt="Coaching & Carreiras Logo" class="h-10 lg:h-12 w-auto object-contain bg-white rounded p-1">
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Consultoria especializada em gestão de carreiras, coaching executivo e desenvolvimento organizacional. Transformamos pessoas e organizações.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/coaching-&-carreiras/?originalSubdomain=br" target="_blank" class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center text-slate-400 hover:bg-gold-500 hover:text-navy-900 transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.instagram.com/coaching_carreiras/" target="_blank" class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center text-slate-400 hover:bg-gold-500 hover:text-navy-900 transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.facebook.com/coachingcarreiras" target="_blank" class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center text-slate-400 hover:bg-gold-500 hover:text-navy-900 transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCU5BL-XmtzTGc7bC_0TS5mw" target="_blank" class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center text-slate-400 hover:bg-gold-500 hover:text-navy-900 transition-all">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Navegação</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#inicio" class="text-slate-400 hover:text-gold-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i> Início</a></li>
+                        <li><a href="#sobre" class="text-slate-400 hover:text-gold-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i> Sobre Nós</a></li>
+                        <li><a href="#profissionais" class="text-slate-400 hover:text-gold-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i> Para Profissionais</a></li>
+                        <li><a href="#empresas" class="text-slate-400 hover:text-gold-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i> Para Empresas</a></li>
+                        <li><a href="#depoimentos" class="text-slate-400 hover:text-gold-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i> Depoimentos</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Soluções</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-slate-400 text-sm">Gestão de Carreiras</span></li>
+                        <li><span class="text-slate-400 text-sm">Coaching Executivo</span></li>
+                        <li><span class="text-slate-400 text-sm">Outplacement</span></li>
+                        <li><span class="text-slate-400 text-sm">Hunting e Seleção</span></li>
+                        <li><span class="text-slate-400 text-sm">Treinamentos In Company</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Contato</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-slate-400 text-sm leading-relaxed">Avenida Ibirapuera, 2064<br>Moema – São Paulo/SP</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-gold-500 flex-shrink-0"></i>
+                            <span class="text-slate-400 text-sm">(11) 2308-9233</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="message-circle" class="w-5 h-5 text-gold-500 flex-shrink-0"></i>
+                            <a href="https://wa.me/5511947320053" target="_blank" class="text-slate-400 hover:text-gold-400 transition-colors text-sm">(11) 94732-0053</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-gold-500 flex-shrink-0"></i>
+                            <a href="mailto:atendimento@coachingcarreiras.com.br" class="text-slate-400 hover:text-gold-400 transition-colors text-sm truncate">atendimento@coachingcarreiras.com.br</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-navy-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm text-center md:text-left">
+                    © 2014 – 2026 Coaching & Carreiras. Todos os direitos reservados.
+                </p>
+                <p class="text-slate-600 text-xs uppercase tracking-widest font-bold">
+                    Design de Alta Performance
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511947320053" target="_blank" 
+       class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40 hover:scale-110 transition-all duration-300 group">
+        <span class="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20"></span>
+        <i data-lucide="message-circle" class="w-7 h-7 text-white fill-white"></i>
+    </a>
+
+    <div id="modal-b2c-1" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-navy-950/60 backdrop-blur-sm" onclick="closeModal('modal-b2c-1')"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center">
+                            <i data-lucide="route" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900">Gestão e Planejamento de Carreiras</h3>
+                    </div>
+                    <button onclick="closeModal('modal-b2c-1')" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-slate-500"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        O profissional do século XXI assumiu em definitivo o gerenciamento da sua carreira. Nossa equipe utiliza as ferramentas mais modernas para mapear sua trajetória, com sessões de 5 a 10 encontros (60 a 90 minutos) realizadas de forma personalizada.
+                    </p>
+                    <h4 class="font-semibold text-navy-900 mb-3">Etapas e Fases do Gerenciamento:</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Etapa 01 - Auto Análise:</strong> Análise de Perfil Comportamental (Personalidade, Racionalidade e Emocional).</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Etapa 02 - Habilidades:</strong> Análise Comportamental focada em dinâmicas de Grupo e Liderança.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Etapa 03 - Qualidade de Vida:</strong> Identificação e análise dos principais fatores estressores do cotidiano.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Etapa 04 - Mapeamento:</strong> Planejamento Futuro detalhado acompanhado de Feedback.</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511947320053" target="_blank" class="inline-flex items-center gap-2 bg-navy-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-800 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Falar com um Consultor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-b2c-2" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-navy-950/60 backdrop-blur-sm" onclick="closeModal('modal-b2c-2')"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center">
+                            <i data-lucide="shuffle" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900">Transição de Carreiras & Mercado</h3>
+                    </div>
+                    <button onclick="closeModal('modal-b2c-2')" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-slate-500"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Voltado ao profissional que tem interesse em avaliar novos mercados, atuando como um mecanismo de avaliação contínua para sua empregabilidade e prospecção ativa de novas oportunidades.
+                    </p>
+                    <h4 class="font-semibold text-navy-900 mb-3">Benefícios e Estrutura:</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Prospecção Direcionada:</strong> Avaliação do mercado de forma confidencial, identificando setores em alta.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Network Estratégico:</strong> Ampliação de contatos e aproximação com headhunters e decisores.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Adequação Curricular:</strong> Ajuste fino do perfil para as exigências específicas das vagas-alvo.</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511947320053" target="_blank" class="inline-flex items-center gap-2 bg-navy-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-800 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Falar com um Consultor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-b2c-3" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-navy-950/60 backdrop-blur-sm" onclick="closeModal('modal-b2c-3')"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center">
+                            <i data-lucide="users" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900">Coaching Executivo e Life Coaching</h3>
+                    </div>
+                    <button onclick="closeModal('modal-b2c-3')" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-slate-500"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        O processo de Coaching é estruturado de forma dinâmica e assertiva, focado exclusivamente no alcance de objetivos específicos. Nossos atendimentos são conduzidos por profissionais com sólida Certificação Internacional.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        A metodologia é aplicada em ciclos de 6 a 10 encontros (presenciais ou via telefone), unindo as demandas profissionais às necessidades pessoais (Life Coaching).
+                    </p>
+                    <h4 class="font-semibold text-navy-900 mb-3">Principais áreas de foco:</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Desenvolvimento da capacidade de administrar mudanças e lidar com o stress de maneira positiva.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Aprimoramento da capacidade de liderança visando o aumento de produtividade e lucros.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Melhora contínua na habilidade de trabalhar eficientemente em equipes e resolver conflitos.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Aumento perceptível da qualidade de vida no ambiente de trabalho.</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511947320053" target="_blank" class="inline-flex items-center gap-2 bg-navy-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-800 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Falar com um Consultor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-b2c-4" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-navy-950/60 backdrop-blur-sm" onclick="closeModal('modal-b2c-4')"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center">
+                            <i data-lucide="compass" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900">Orientação Pré e Pós Carreiras</h3>
+                    </div>
+                    <button onclick="closeModal('modal-b2c-4')" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-slate-500"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Desenhado para Trainees (Pré-Carreira) que buscam a primeira grande oportunidade ou para Executivos Seniores (Pós-Carreira) estruturando a aposentadoria ou novos negócios.
+                    </p>
+                    <h4 class="font-semibold text-navy-900 mb-3">Etapas do Programa:</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Diagnóstico:</strong> Avaliação detalhada do perfil e expectativas de longo prazo.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Plano de Ação:</strong> Metas tangíveis focadas na inserção ou transição mercadológica.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Mentorias:</strong> Acompanhamento prático e simulações para tomada de decisão.</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511947320053" target="_blank" class="inline-flex items-center gap-2 bg-navy-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-800 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Falar com um Consultor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-b2c-5" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-navy-950/60 backdrop-blur-sm" onclick="closeModal('modal-b2c-5')"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center">
+                            <i data-lucide="languages" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900">English Interview</h3>
+                    </div>
+                    <button onclick="closeModal('modal-b2c-5')" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-slate-500"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        O serviço *English Interview* não é uma aula de idioma, mas um treinamento de alta performance focado em estruturar o seu discurso corporativo (storytelling) em inglês, garantindo fluência e segurança em painéis com headhunters internacionais.
+                    </p>
+                    <h4 class="font-semibold text-navy-900 mb-3">Dinâmica do Treinamento:</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Role-play:</strong> Simulações imersivas de entrevistas baseadas em competências.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Vocabulário:</strong> Alinhamento de expressões técnicas e jargões da sua área de atuação.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Feedback:</strong> Relatório detalhado sobre postura, gramática e capacidade de argumentação.</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511947320053" target="_blank" class="inline-flex items-center gap-2 bg-navy-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-800 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Falar com um Consultor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-b2c-6" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-navy-950/60 backdrop-blur-sm" onclick="closeModal('modal-b2c-6')"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center">
+                            <i data-lucide="user-check" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900">Serviços Individuais</h3>
+                    </div>
+                    <button onclick="closeModal('modal-b2c-6')" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-slate-500"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Desenvolvidos para atender demandas pontuais e urgentes do mercado, otimizando seu tempo com soluções de impacto imediato.
+                    </p>
+                    <h4 class="font-semibold text-navy-900 mb-3">Portfólio Avulso:</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Revisão Curricular e LinkedIn:</strong> Estruturação de perfil atraente para recrutadores e SEO (ATS).</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Levantamento e Orientação:</strong> Sessões focadas em mapeamento de perfil e direcionamento tático.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Avaliação Idiomática:</strong> Nivelamento e feedback em Inglês e Espanhol corporativo.</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511947320053" target="_blank" class="inline-flex items-center gap-2 bg-navy-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-800 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Falar com um Consultor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-b2b-1" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-navy-950/60 backdrop-blur-sm" onclick="closeModal('modal-b2b-1')"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center">
+                            <i data-lucide="building" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900">Coaching Corporativo & Organizacional</h3>
+                    </div>
+                    <button onclick="closeModal('modal-b2b-1')" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-slate-500"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Instrumentalizamos pessoas e equipes com as ferramentas que precisam para serem criativamente produtivas. A meta do nosso coaching é alinhar a Missão, Visão e Valores da organização à conduta diária da liderança.
+                    </p>
+                    <h4 class="font-semibold text-navy-900 mb-3">Atuações Estratégicas:</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Alinhamento comportamental para sucessão e promoção de talentos chave.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Implementação e mediação de processos de Feedback 360º.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Gerenciamento de Mudanças (reestruturações, aquisições e fusões).</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511947320053" target="_blank" class="inline-flex items-center gap-2 bg-navy-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-800 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Solicitar Reunião Estratégica
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-b2b-2" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-navy-950/60 backdrop-blur-sm" onclick="closeModal('modal-b2b-2')"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center">
+                            <i data-lucide="door-open" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900">Outplacement Corporativo</h3>
+                    </div>
+                    <button onclick="closeModal('modal-b2b-2')" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-slate-500"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Um processo de desligamento conduzido com respeito e ética protege a moral da equipe remanescente e fortalece o Employer Branding da empresa. 
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        O programa auxilia o profissional desligado a entender seu momento através de reuniões e atividades online, estruturando uma campanha forte para sua recolocação.
+                    </p>
+                    <h4 class="font-semibold text-navy-900 mb-3">Vantagens do Programa:</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Proteção da Marca:</strong> Transforma um momento de crise organizacional em respeito e gratidão.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Suporte Total:</strong> Assessoria de currículo, LinkedIn, network e metas reais de mercado.</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511947320053" target="_blank" class="inline-flex items-center gap-2 bg-navy-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-800 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Solicitar Reunião Estratégica
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-b2b-3" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-navy-950/60 backdrop-blur-sm" onclick="closeModal('modal-b2b-3')"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center">
+                            <i data-lucide="search" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900">Recrutamento & Seleção (Hunting)</h3>
+                    </div>
+                    <button onclick="closeModal('modal-b2b-3')" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-slate-500"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Conduzimos buscas ativas e criteriosas no mercado, muitas vezes acessando talentos que não estão procurando novas oportunidades. O sigilo e a rapidez são fundamentais em vagas estratégicas e executivas.
+                    </p>
+                    <h4 class="font-semibold text-navy-900 mb-3">Diferenciais do nosso processo:</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Avaliação aprofundada de Fit Cultural (adequação aos valores da contratante).</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Entrevistas baseadas inteiramente em competências.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>Headhunters especializados por segmento, com infraestrutura de ponta (salas VIP para processos confidenciais).</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511947320053" target="_blank" class="inline-flex items-center gap-2 bg-navy-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-800 transition-colors mt-4">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Solicitar Reunião Estratégica
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-b2b-4" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-navy-950/60 backdrop-blur-sm" onclick="closeModal('modal-b2b-4')"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center">
+                            <i data-lucide="map" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900">Assessment (Mapa de Talentos)</h3>
+                    </div>
+                    <button onclick="closeModal('modal-b2b-4')" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-slate-500"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        O Assessment proporciona uma radiografia clara dos profissionais, facilitando movimentações horizontais, planos de sucessão (PDI) e promoções justas, garantindo que o colaborador seja alocado onde é mais produtivo.
+                    </p>
+                    <h4 class="font-semibold text-navy-900 mb-3">6 Etapas do Mapeamento:</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>1. Entendimento da Cultura (Missão, Visão e Valores da Empresa).</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>2. Mapeamento Core (Mapeamento de competências essenciais).</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>3. Avaliação Científica com ferramentas focadas.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>4. Entrevista Profunda focada em anseios de carreira.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>5. Relatório gerencial apontando Gaps de competência.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span>6. Feedback direto e empático.</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511947320053" target="_blank" class="inline-flex items-center gap-2 bg-navy-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-800 transition-colors mt-4">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Solicitar Reunião Estratégica
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-b2b-5" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-navy-950/60 backdrop-blur-sm" onclick="closeModal('modal-b2b-5')"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div class="sticky top-0 bg-white border-b border-slate-100 px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center">
+                            <i data-lucide="presentation" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900">Treinamentos In Company</h3>
+                    </div>
+                    <button onclick="closeModal('modal-b2b-5')" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-slate-500"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Nossos cursos fogem da dinâmica "de prateleira". Cada treinamento é construído e desenhado com base nas necessidades exatas que a sua empresa enfrenta no momento.
+                    </p>
+                    <h4 class="font-semibold text-navy-900 mb-3">Formatos de Aplicação:</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>Cursos Presenciais:</strong> Podem ser realizados na estrutura da sua empresa, integrando e customizando dinâmicas reais da equipe.</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
+                            <span><strong>E-learning (À Distância):</strong> Solução focada na economia de tempo, permitindo que a equipe de vendas ou liderança aprenda sem paralisar a operação.</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511947320053" target="_blank" class="inline-flex items-center gap-2 bg-navy-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-800 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Solicitar Reunião Estratégica
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('[id^="modal-"]').forEach(modal => {
+                    modal.classList.add('hidden');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer para animações
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
